@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <TextView style="@style/title"
+        android:text="我的"/>
+    <View style="@style/xian"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff3f3f3">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout style="@style/user_block"
+                android:background="@color/white">
+                <RelativeLayout
+                    style="@style/user_block"
+                    android:id="@+id/my_info"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:id="@+id/iv"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:textSize="16sp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_users"/>
+                    <TextView
+                        android:id="@+id/userId"
+                        android:layout_width="wrap_content"
+                        android:visibility="visible"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/iv"
+                        android:layout_marginLeft="20dp"
+                        />
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_toRightOf="@id/iv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/userId"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="20dp"
+                        android:text="请先登录"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/users">
+                <LinearLayout style="@style/user_block"
+                    android:id="@+id/my_buy">
+                    <ImageView style="@style/users_item_img" android:src="@drawable/home_ic_my_buy" />
+                    <TextView style="@style/users_item_name" android:text="卡密购买" />
+                    <ImageView style="@style/users_item_arrow"/>
+                </LinearLayout>
+
+                <View style="@style/users_xian"/>
+                <LinearLayout style="@style/user_block"
+                    android:id="@+id/my_history">
+                    <ImageView style="@style/users_item_img" android:src="@drawable/home_ic_my_history" />
+                    <TextView style="@style/users_item_name" android:text="播放历史" />
+                    <ImageView style="@style/users_item_arrow"/>
+                </LinearLayout>
+
+                <View style="@style/users_xian"/>
+
+                <LinearLayout style="@style/user_block"
+                    android:id="@+id/my_download">
+                    <ImageView style="@style/users_item_img" android:src="@drawable/home_ic_my_download" />
+                    <TextView style="@style/users_item_name" android:text="离线缓存" />
+                    <ImageView style="@style/users_item_arrow"/>
+                </LinearLayout>
+
+                <View style="@style/users_xian"/>
+
+                <LinearLayout style="@style/user_block"
+                    android:id="@+id/my_collect">
+                    <ImageView style="@style/users_item_img" android:src="@drawable/home_ic_my_collect" />
+                    <TextView style="@style/users_item_name" android:text="我的收藏" />
+                    <ImageView style="@style/users_item_arrow"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout style="@style/users">
+                <LinearLayout style="@style/user_block"
+                    android:id="@+id/my_share">
+                    <ImageView style="@style/users_item_img" android:src="@drawable/home_ic_my_share" />
+                    <TextView style="@style/users_item_name" android:text="分享软件" />
+                    <ImageView style="@style/users_item_arrow"/>
+                </LinearLayout>
+
+                <View style="@style/users_xian"/>
+
+                <LinearLayout style="@style/user_block"
+                    android:id="@+id/my_mzsm">
+                    <ImageView style="@style/users_item_img" android:src="@drawable/home_ic_my_gy" />
+                    <TextView style="@style/users_item_name" android:text="免责声明" />
+                    <ImageView style="@style/users_item_arrow"/>
+                </LinearLayout>
+
+                <View style="@style/users_xian"/>
+
+                <LinearLayout style="@style/user_block"
+                    android:id="@+id/my_setup">
+                    <ImageView style="@style/users_item_img" android:src="@drawable/home_ic_my_setup" />
+                    <TextView style="@style/users_item_name" android:text="系统设置" />
+                    <ImageView style="@style/users_item_arrow"/>
+                </LinearLayout>
+
+                <View style="@style/users_xian"/>
+
+                <LinearLayout style="@style/user_block"
+                    android:id="@+id/my_clear">
+                    <ImageView style="@style/users_item_img" android:src="@drawable/home_ic_my_clear" />
+                    <TextView style="@style/users_item_name" android:text="清除缓存" />
+                    <ImageView style="@style/users_item_arrow"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

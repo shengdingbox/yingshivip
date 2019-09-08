@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorOn">#FFED7D31</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white2">#CCCCCC</color>
+    <color name="h2">#FF222222</color>
+    <color name="h3">#FF333333</color>
+    <color name="h5">#FF555555</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent">#50000000</color>
+    <color name="translucentWhite">#F0FFFFFF</color>
+    <color name="select">#ffFF4081</color>
+    <color name="buttom1">#FFED7D31</color>
+    <color name="buttom1_on">#FFED7D31</color>
+    <color name="playlist_select">#FFED7D31</color>
+    <color name="backCode">#FFED7D31</color>
+</resources>

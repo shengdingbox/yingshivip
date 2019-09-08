@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:id="@+id/PlayListView"
+    android:orientation="vertical">
+    <android.support.design.widget.TabLayout
+        android:id="@+id/PlayListTab"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:scrollbarSize="16sp"
+        app:tabMode="scrollable"
+        app:tabIndicatorHeight="2dp"
+        app:tabIndicatorColor="@color/colorOn"
+        app:tabPadding="5dp"
+        app:tabSelectedTextColor="@color/colorOn"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        app:tabGravity="center"
+        app:tabTextColor="@color/white" />
+    <android.support.v4.view.ViewPager
+        android:layout_marginTop="5dp"
+        android:id="@+id/PlayListPager"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

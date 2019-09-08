@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <cn.dabaotv.movie.main.QViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:id="@+id/frame"
+        android:layout_weight="1"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#ddd"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:id="@+id/item1"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <LinearLayout style="@style/nav_block" android:id="@+id/nav_sy">
+            <ImageView style="@style/nav_img" android:id="@+id/nav_img_sy" android:src="@drawable/ic_home_nav_sy1"/>
+            <TextView style="@style/nav_name" android:id="@+id/nav_t0" android:text="首页"/>
+        </LinearLayout>
+        <LinearLayout style="@style/nav_block" android:id="@+id/nav_xs">
+            <ImageView style="@style/nav_img" android:id="@+id/nav_img_xs" android:src="@drawable/ic_home_nav_xs0"/>
+            <TextView style="@style/nav_name" android:id="@+id/nav_t1" android:text="搜书"/>
+        </LinearLayout>
+        <LinearLayout style="@style/nav_block" android:id="@+id/nav_zb">
+            <ImageView style="@style/nav_img" android:id="@+id/nav_img_zb"  android:src="@drawable/ic_home_nav_zb0"/>
+            <TextView style="@style/nav_name" android:id="@+id/nav_t2" android:text="发现"/>
+        </LinearLayout>
+        <LinearLayout style="@style/nav_block" android:id="@+id/nav_wd">
+            <ImageView style="@style/nav_img" android:id="@+id/nav_img_wd" android:src="@drawable/ic_home_nav_wd0" />
+            <TextView style="@style/nav_name" android:id="@+id/nav_t3" android:text="我的"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

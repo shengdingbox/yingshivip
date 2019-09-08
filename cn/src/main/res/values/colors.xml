@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="diss">#FFFF5722</color>
+    <color name="button">#1E9FFF</color>
+    <color name="colorOn">#FF1E9FFF</color>
+
+    <color name="selectNo">#FF555555</color>
+    <color name="selectOn">#FFFF5722</color>
+    <color name="ColorTitle">#FF333333</color>
+
+
+    <color name="black">#FF000000</color>
+    <color name="black3">#FF333333</color>
+    <color name="black6">#FF666666</color>
+    <color name="black9">#FF999999</color>
+
+    <color name="readback">#F7EED6</color>
+    <color name="super_light_grey">#FFCCCCCC</color>
+    <color name="lucid10">#5a000000</color>
+    <color name="dBack">#FFF0F0F0</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="translucent">#50000000</color>
+    <color name="back">#FFFFFFFF</color>
+    <color name="backColor">#FFF9F9F9</color>
+
+
+    <color name="deleteText">#FFFF5722</color>
+
+    <!--Zxing相关-->
+    <color name="contents_text">#ff000000</color>
+    <color name="encode_view">#ffffffff</color>
+    <color name="possible_result_points">#c0ffbd21</color> <!-- Android standard ICS color -->
+    <color name="result_minor_text">#ffc0c0c0</color>
+    <color name="result_points">#c099cc00</color> <!-- Android standard ICS color -->
+    <color name="result_text">#ffffffff</color>
+    <color name="result_view">#b0000000</color>
+    <color name="status_text">#ffffffff</color>
+    <color name="viewfinder_laser">#ffcc0000</color> <!-- Android standard ICS color -->
+    <color name="viewfinder_mask">#60000000</color>
+</resources>

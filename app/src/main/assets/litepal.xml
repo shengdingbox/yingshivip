@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <dbname value = "record"/>  <!--指定数据库的名称-->
+    <version value = "7"/><!--指定数据库的版本-->
+    <list>
+        <mapping class = "cn.dabaotv.movie.DB.DBRecord"></mapping>
+        <mapping class = "cn.dabaotv.movie.DB.DBjk"></mapping>
+        <mapping class = "cn.dabaotv.movie.DB.DBNovel"></mapping>
+        <mapping class = "cn.dabaotv.movie.DB.DBDown"></mapping>
+        <mapping class = "cn.dabaotv.movie.DB.DBAd"></mapping>
+    </list>
+</litepal>

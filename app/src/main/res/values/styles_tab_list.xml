@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="listv_tab_view" parent="Widget.Design.TabLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">26dp</item>
+        <item name="android:scrollbarSize">16sp</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabIndicatorColor">@color/colorOn</item>
+        <item name="tabSelectedTextColor">@color/colorOn</item>
+        <item name="tabBackground">@drawable/conl_button_tab_screen</item>
+        <item name="tabTextColor">#555</item>
+        <item name="tabMode">scrollable</item>
+    </style>
+
+
+</resources>

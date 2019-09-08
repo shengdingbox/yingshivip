@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true"
+        android:drawable="@drawable/conl_button_tab_sereen_on"/>
+    <item
+        android:drawable="@drawable/bkg_null"
+        android:state_selected="false"
+        android:state_focused="false"
+        android:state_pressed="false" />
+</selector>

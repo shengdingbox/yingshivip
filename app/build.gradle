@@ -1,0 +1,159 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.mob.sdk'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId 'cn.dabaotv.video'
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 2
+        versionName "2.0.2"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk { abiFilters 'armeabi-v7a', 'x86' }
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a"
+        }
+        lintOptions {
+
+            abortOnError false
+
+            checkReleaseBuilds false
+
+// 防止在发布的时候出现因MissingTranslation导致Build Failed!
+
+            disable 'MissingTranslation'
+
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'dabaotv_key'
+            keyPassword 'dabaotv_key'
+            storeFile file('../dabaotv_key.jks')
+            storePassword 'dabaotv_key'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "大宝影城_${variant.versionName}_${variant.buildType.name}.apk"
+            //outputFileName = "app-${variant.buildType.name}.apk"
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+            res.srcDirs = [
+                    'src/main/res/',
+                    'src/main/res/layout/home',
+                    'src/main/res/layout/play',
+                    'src/main/res/layout/list',
+                    'src/main/res/layout/down',
+                    'src/main/res/layout/conl',
+                    'src/main/res/layout/novel',
+                    'src/main/res/layout/search',
+                    'src/main/res/layout/record',
+            ]
+        }
+    }
+    buildToolsVersion '28.0.3'
+    productFlavors {
+    }
+}
+allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        flatDir { dirs 'libs' }
+    }
+}
+
+//MobSDK {
+//    appKey "27d1d8271c3a3"
+//    appSecret "7e18eea30e15d53b2afd58414bdc9347"
+//    ShareSDK {
+//        devInfo {
+//
+//            QQ {
+//                appId "100371282"
+//                appKey "aed9b0303e3ed1e27bae87c33761161d"
+//                shareByAppClient true
+//                bypassApproval false
+//            }
+//            QZone {
+//                appId "100371282"
+//                appKey "aed9b0303e3ed1e27bae87c33761161d"
+//                shareByAppClient true
+//                bypassApproval false
+//            }
+//
+//            WechatMoments {
+//                appId "wxcc3b482081dc5bd3"
+//                appSecret "84afcceb1ad86ab485d79c4a1329ace9"
+//                shareByAppClient true
+//                bypassApproval false
+//            }
+//
+//            Wechat {
+//                appId "wxcc3b482081dc5bd3"
+//                appSecret "84afcceb1ad86ab485d79c4a1329ace9"
+//                shareByAppClient true
+//                bypassApproval false
+//            }
+//
+//
+//        }
+//    }
+//}
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+    implementation 'io.reactivex:rxjava:1.1.6'
+    // 权限
+    implementation project(':cn')
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'org.jsoup:jsoup:1.10.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'org.litepal.android:core:1.6.1'
+    // 数据库
+    implementation project(':cn')
+    implementation project(':mslide')
+    // 幻灯
+    implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
+    // 滑动返回
+    implementation 'com.mindorks.android:prdownloader:0.4.0'
+    implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1249_43610.jar')
+    //RxJava2
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    //工具箱
+    api 'com.blankj:utilcode:1.20.3'
+    implementation project(':clinglibrary')
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+}
