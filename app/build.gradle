@@ -50,8 +50,8 @@ android {
     }
     applicationVariants.all { variant ->
         variant.outputs.all {
-            outputFileName = "大宝影城_${variant.versionName}_${variant.buildType.name}.apk"
-            //outputFileName = "app-${variant.buildType.name}.apk"
+           // outputFileName = "大宝影城_${variant.versionName}_${variant.buildType.name}.apk"
+            outputFileName = "app-${variant.buildType.name}.apk"
         }
     }
     sourceSets {
