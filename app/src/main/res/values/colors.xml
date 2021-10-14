@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#000</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="colorOn">#FFED7D31</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="white2">#CCCCCC</color>
-    <color name="h2">#FF222222</color>
-    <color name="h3">#FF333333</color>
-    <color name="h5">#FF555555</color>
-    <color name="transparent">#00000000</color>
-    <color name="translucent">#50000000</color>
-    <color name="translucentWhite">#F0FFFFFF</color>
-    <color name="select">#ffFF4081</color>
-    <color name="buttom1">#FFED7D31</color>
-    <color name="buttom1_on">#FFED7D31</color>
-    <color name="playlist_select">#FFED7D31</color>
-    <color name="backCode">#FFED7D31</color>
+    <color name="colorPrimary">#FCDD4C1E</color>
+    <color name="colorPrimaryDark">#5685FF</color>
+    <color name="colorAccent">#5685FF</color>
+    <color name="shimmer_light_transparent">#16000000</color>
+    <color name="title_dark_color">#2B2B2B</color>
+    <color name="title_deepdark_color">#1F1F1F</color>
+    <color name="tab_selected_color">#FFFFFF</color>
+    <color name="tab_2_selected_color">#343333</color>
+    <color name="tab_normal_color">#9EFFFFFF</color>
+    <color name="title_gray_color">#626161</color>
+    <color name="tab_2_normal_color">#6C2D2D2D</color>
+    <color name="toolbar_color">#5685FF</color>
+    <color name="toolbar_start_color">#12F4F8</color>
+
+    <color name="confirm">#fd5e5e5e</color>
+    <color name="comment_user_name">#868087</color>
+    <color name="comment_content">#2c292a</color>
+    <color name="comment_time">#B0ADB0</color>
 </resources>

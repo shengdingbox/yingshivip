@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#FCF8F8"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <include layout="@layout/tool_bar_layout"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:background="#FFFFFF"
+            android:hint="输入你的用户名"
+            android:paddingLeft="@dimen/dp_10"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/name"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="#FFFFFF"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/dp_10"
+            android:textSize="@dimen/sp_14" />
+
+        <EditText
+            android:id="@+id/pass_mail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/pass"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="#FFFFFF"
+            android:hint="邮箱(用于密码找回哦)"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="@dimen/dp_10"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/login_bt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/pass_mail"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/login_bt_selector"
+            android:gravity="center"
+            android:text="点我快速开始观影"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

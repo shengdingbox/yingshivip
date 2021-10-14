@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- 倒计时控件属性 -->
-    <declare-styleable name="CountdownView">
-        <attr name="time"  format="integer" />
-        <attr name="defaultStr" format="string"/>
-    </declare-styleable>
-</resources>

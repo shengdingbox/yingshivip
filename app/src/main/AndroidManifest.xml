@@ -1,108 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="cn.dabaotv.video">
+    package="com.movtalent.app">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
-
-    <application xmlns:tools="http://schemas.android.com/tools"
-        android:name="cn.dabaotv.movie.MyApplication"
+    <application
+        android:name=".App"
         android:allowBackup="true"
-        android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_logo"
+        android:icon="@mipmap/ticon2"
         android:label="@string/app_name"
-        android:largeHeap="true"
-        android:networkSecurityConfig="@xml/network_security_config"
-        android:roundIcon="@mipmap/ic_logo_tm"
         android:supportsRtl="true"
-        android:theme="@style/myAppTheme"
-        tools:replace="android:name">
-        <activity
-            android:name="cn.dabaotv.movie.StartActivity"
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.UserProfileActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/STheme">
+            ></activity>
+
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:screenOrientation="portrait"
+            ></activity>
+
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.TransparentA"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="5bf2b973f1f556a75200073c" />
-        <meta-data
-            android:name="UMENG_CHANNEL"
-            android:value="umeng" />
-
-        <activity android:name="cn.dabaotv.movie.MainActivity" />
-        <activity
-            android:name="cn.dabaotv.movie.Conl.ListActivity"
-            android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="cn.dabaotv.movie.Conl.PlayActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize|navigation"
+        <activity android:name=".view.AllLevelActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/PlayTheme" />
-        <activity android:name="cn.dabaotv.movie.search.SearchActivity" />
-        <activity android:name="cn.dabaotv.movie.novel.NovelActivity" />
-        <activity android:name="cn.dabaotv.movie.record.RecordActivity" />
-        <activity android:name="cn.dabaotv.movie.SetActivity" />
-        <!-- <activity -->
-        <!-- android:name="com.mob.tools.MobUIShell" -->
-        <!-- android:configChanges="keyboardHidden|orientation|screenSize" -->
-        <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar" -->
-        <!-- android:windowSoftInputMode="stateHidden|adjustResize"> -->
-        <!-- <intent-filter> -->
-        <!-- <data android:scheme="tencent1104646053" /> -->
-
-
-        <!-- <action android:name="android.intent.action.VIEW" /> -->
-
-
-        <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
-        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name=".wxapi.WXEntryActivity" -->
-        <!-- android:configChanges="keyboardHidden|orientation|screenSize" -->
-        <!-- android:exported="true" -->
-        <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar" /> -->
-        <activity android:name="cn.dabaotv.movie.MzsmActivity" />
-        <activity
-            android:name="cn.dabaotv.movie.screen.ScreenActivity"
-            android:screenOrientation="landscape" />
-
-        <service
-            android:name="com.qingfeng.clinglibrary.service.ClingUpnpService"
-            android:exported="false" />
-        <service
-            android:name="com.qingfeng.clinglibrary.service.SystemService"
-            android:exported="false" />
-
-        <activity android:name="cn.dabaotv.movie.WebViewActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
             />
+
+        <activity android:name=".view.CoinShopActivity"
+            android:screenOrientation="portrait"
+            /> <!-- 趣米的广告结束 -->
+        <activity android:name=".view.WebDetailActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.ReQuestFilmActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.ReportActivitys"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.AllDownLoadActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.SettingActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.LoginActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.RegistActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.AllHistoryActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.AllFavorActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.AboutUsActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.SearchActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.CastDescriptionnActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".view.AllSubjectActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".category.CategoryActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".view.OnlineDetailPageActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.TransparentA" />
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="cn.dabaotv.video"
+            android:authorities="${applicationId}"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths_public" />
         </provider>
 
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

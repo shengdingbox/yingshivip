@@ -1,1 +1,1 @@
-include ':app', ':cn', ':mslide', ':clinglibrary'
+include ':app', 'modules:playerlib', 'modules:common', ':modules:clinglibrary', ':modules:m3u8library'

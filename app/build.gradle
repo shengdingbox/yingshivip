@@ -1,159 +1,148 @@
+ext {
+    var = '../talent.keystore'
+}
 apply plugin: 'com.android.application'
-//apply plugin: 'com.mob.sdk'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId 'cn.dabaotv.video'
-        minSdkVersion 16
+        applicationId "com.dabaotv.drm"
+        minSdkVersion 19
         targetSdkVersion 28
-        versionCode 2
-        versionName "2.0.2"
+        versionCode 101
+        versionName "1.3.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        ndk { abiFilters 'armeabi-v7a', 'x86' }
         multiDexEnabled true
-        ndk {
-            abiFilters "armeabi", "armeabi-v7a"
+        packagingOptions {
+            exclude 'META-INF/rxjava.properties'
         }
+        // tencent+你的AppId
+        manifestPlaceholders = ["tencentAuthId": "1107906831"]
+        multiDexEnabled true
+//        ndk {
+//            abiFilters "armeabi", "armeabi-v7a"
+//        }
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         lintOptions {
-
             abortOnError false
-
             checkReleaseBuilds false
-
-// 防止在发布的时候出现因MissingTranslation导致Build Failed!
-
+            // 防止在发布的时候出现因MissingTranslation导致Build Failed!
             disable 'MissingTranslation'
 
         }
     }
-
     signingConfigs {
+
         release {
-            keyAlias 'dabaotv_key'
-            keyPassword 'dabaotv_key'
-            storeFile file('../dabaotv_key.jks')
-            storePassword 'dabaotv_key'
+            keyAlias 'key0'
+            keyPassword "12345678"
+            storeFile file('../talent.keystore')
+            storePassword "12345678"
         }
     }
+
     buildTypes {
-        release {
-            minifyEnabled false
-            signingConfig signingConfigs.release
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
         debug {
             minifyEnabled false
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-    applicationVariants.all { variant ->
-        variant.outputs.all {
-           // outputFileName = "大宝影城_${variant.versionName}_${variant.buildType.name}.apk"
-            outputFileName = "app-${variant.buildType.name}.apk"
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['src/main/jniLibs']
-            res.srcDirs = [
-                    'src/main/res/',
-                    'src/main/res/layout/home',
-                    'src/main/res/layout/play',
-                    'src/main/res/layout/list',
-                    'src/main/res/layout/down',
-                    'src/main/res/layout/conl',
-                    'src/main/res/layout/novel',
-                    'src/main/res/layout/search',
-                    'src/main/res/layout/record',
-            ]
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi-v7a'
         }
     }
-    buildToolsVersion '28.0.3'
-    productFlavors {
+    lintOptions { checkReleaseBuilds false }
+    packagingOptions {
+        exclude 'META-INF/beans.xml'
     }
-}
-allprojects {
-    repositories {
-        jcenter()
-        maven { url 'https://jitpack.io' }
-        flatDir { dirs 'libs' }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
-//MobSDK {
-//    appKey "27d1d8271c3a3"
-//    appSecret "7e18eea30e15d53b2afd58414bdc9347"
-//    ShareSDK {
-//        devInfo {
-//
-//            QQ {
-//                appId "100371282"
-//                appKey "aed9b0303e3ed1e27bae87c33761161d"
-//                shareByAppClient true
-//                bypassApproval false
-//            }
-//            QZone {
-//                appId "100371282"
-//                appKey "aed9b0303e3ed1e27bae87c33761161d"
-//                shareByAppClient true
-//                bypassApproval false
-//            }
-//
-//            WechatMoments {
-//                appId "wxcc3b482081dc5bd3"
-//                appSecret "84afcceb1ad86ab485d79c4a1329ace9"
-//                shareByAppClient true
-//                bypassApproval false
-//            }
-//
-//            Wechat {
-//                appId "wxcc3b482081dc5bd3"
-//                appSecret "84afcceb1ad86ab485d79c4a1329ace9"
-//                shareByAppClient true
-//                bypassApproval false
-//            }
-//
-//
-//        }
-//    }
-//}
 dependencies {
-    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.github.forvv231:EasyNavigation:1.0.3'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
-    implementation 'io.reactivex:rxjava:1.1.6'
-    // 权限
-    implementation project(':cn')
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
-    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
-    implementation 'org.jsoup:jsoup:1.10.2'
-    implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
-    implementation 'org.litepal.android:core:1.6.1'
-    // 数据库
-    implementation project(':cn')
-    implementation project(':mslide')
-    // 幻灯
-    implementation 'me.imid.swipebacklayout.lib:library:1.1.0'
-    // 滑动返回
-    implementation 'com.mindorks.android:prdownloader:0.4.0'
-    implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1249_43610.jar')
-    //RxJava2
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.1'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
-    //工具箱
-    api 'com.blankj:utilcode:1.20.3'
-    implementation project(':clinglibrary')
-    implementation 'com.tencent.bugly:crashreport:latest.release'
-    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
-    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
-    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    //view 绑定
+    api 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    //权限管理
+    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.4@aar'
+    //流式标签
+    implementation 'com.github.alidili:FlowLayout:v1.5'
+    //数据库room
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+    implementation project(':modules:common')
+    implementation project(':modules:playerlib')
+
+    implementation "com.simple:spiderman:1.1.2"
+    implementation 'com.yanzhenjie:sofia:1.0.5'
+    //调色板
+    implementation 'com.android.support:palette-v7:28.0.0'
+
+    //tablayout
+    //对话框
+    implementation 'com.lxj:xpopup:1.5.2'
+    //加载状态
+    implementation 'com.billy.android:gloading:1.0.0'
+    implementation('com.squareup.retrofit2:converter-simplexml:2.1.0') {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
+    }
+    //多类型recycleview
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.47'
+
+    //多类型adapter
+    implementation 'me.drakeet.multitype:multitype:3.4.4'
+    implementation 'com.facebook.shimmer:shimmer:0.4.0'
+
+    implementation 'cn.bingoogolapple:bga-banner:2.2.6@aar'
+
+    //多状态布局切换
+    implementation 'com.github.Bakumon:StatusLayoutManager:1.0.4'
+
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+
+    //第三方登录分享
+    implementation 'com.github.tianzhijiexian:ShareLoginLib:2.0.0-beta'
+
+    //友盟
+    implementation 'com.umeng.umsdk:analytics:8.0.0'
+    implementation 'com.umeng.umsdk:common:2.0.0'
+    //友盟推送
+    //PushSDK必须依赖utdid库，所以需要加入对应依赖
+    implementation 'com.umeng.umsdk:utdid:1.1.5.3'
+    //PushSDK
+    implementation 'com.umeng.umsdk:push:6.0.1'
+
+    //banner
+    implementation 'com.ms:Banner:2.3.16'
+    implementation project(path: ':modules:m3u8library')
+    implementation 'org.litepal.android:java:3.0.0'
+
+    implementation 'com.alibaba:fastjson:1.2.66'
+
+    implementation('com.karumi:dexter:4.2.0', {
+        exclude group: 'com.android.support'
+    })
 }

@@ -1,34 +1,45 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!-- Base application theme. -->
-    <style name="myAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/white</item>
-        <!--去除标题栏-->
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <!-- 沉浸式状态栏 -->
-        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">false</item>
-        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
     </style>
 
-    <style name="STheme" parent="myAppTheme">
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@drawable/start</item>
-        <item name="android:textSize">33sp</item>
+    <style name="CustomTablayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
-    <style name="PlayTheme" parent="myAppTheme">
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowBackground">@drawable/start</item>
+    <style name="CustomTablayoutTextAppearance3" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
-    <style name="clickstyle">
-        <item name="android:clickable">true</item>
-        <item name="android:background">?attr/selectableItemBackground</item>
+    <style name="Theme.TransparentA" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
+    <style name="Square">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/square_background</item>
+        <item name="android:textColor">@color/title_dark_color</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ToolbarTitle">
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>
